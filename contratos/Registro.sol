@@ -9,5 +9,10 @@ contract Registro {
 
     function RegistrarMensagem(string _mensagem) public {
         mensagem = _mensagem;
+        emit NovaMensagem(mensagem);
     }
+
+    event NovaMensagem(
+        string _novaMsg
+    );
 }
