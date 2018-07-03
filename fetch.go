@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
@@ -9,7 +10,7 @@ import (
 )
 
 func main() {
-	rede, err := ethclient.Dial("https://rinkeby.infura.io/QPF0qjGpH9OjFuuMrCse")
+	rede, err := ethclient.Dial(os.Getenv("ETH_RINKEBY_URL"))
 	if err != nil {
 		log.Fatalf("Nao foi possível se conectar a rede do Infura. Erro: %s\n", err.Error())
 	}
