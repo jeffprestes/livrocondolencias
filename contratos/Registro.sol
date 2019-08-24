@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity 0.5.11;
 
 contract Registro {
     string public mensagem;
@@ -7,7 +7,7 @@ contract Registro {
         mensagem = "Uma boa e pacifica morte para todos...";
     }
 
-    function RegistrarMensagem(string _mensagem) public {
+    function RegistrarMensagem(string memory _mensagem) public {
         mensagem = _mensagem;
         emit NovaMensagem(mensagem);
     }
