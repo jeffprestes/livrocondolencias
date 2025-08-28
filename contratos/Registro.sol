@@ -1,13 +1,14 @@
-pragma solidity 0.5.11;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.24;
 
 contract Registro {
     string public mensagem;
 
-    constructor () public {
+    constructor() {
         mensagem = "Uma boa e pacifica morte para todos...";
     }
 
-    function RegistrarMensagem(string memory _mensagem) public {
+    function RegistrarMensagem(string calldata _mensagem) public {
         mensagem = _mensagem;
         emit NovaMensagem(mensagem);
     }
